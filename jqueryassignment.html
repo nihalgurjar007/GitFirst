@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".body").on("click",".plus",function(){
+        var form="<div class='form'><input type='text' class='text'><button class='plus'>+</button><button class='minus'>-</button><br/><button class=show>Show</button><br><p class='data'> </p>";
+        $( ".body" ).append(form)
+    });
+    $(".body").on("click",".minus",function(){
+        $(this).parent().remove();
+    });
+  
+ $(".body").on("click",".show",function(){
+      var val1=$(this).parent().find('input').val();
+       $(this).parent().find('p').append(val1);
+      
+    });
+    
+    
+});
+</script>
+</head>
+<body>
+<div class="body">
+<div class="form">
+<input type="text" class="text">
+<button class="plus">+</button>
+<br/>
+<button class="show">Show</button><p class="data"> </p>
+</div>
+</div>
+
+</body>
+</html>
